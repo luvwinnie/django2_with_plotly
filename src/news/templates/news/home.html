@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>Welcome to your dashboard</h1>
+        {% if hide_me == True %}
+		<p>Your next scrape is in {{ next_scrape }} hours.</p>
+		{% else %}
+        <form method="POST" action="{%url 'scrape' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary">Get my morning news</button>
+        </form>
+        {% endif %}
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 text-center">
+                {% for object in object_list %}
+                <div class="card text-center" style="width: 100%;">
+                    <div class="card-body">
+                        <img src="{{ object.image.url }}" alt="" class="card-img-top">
+                        <h5 class="card-title"><a href="{{ object.url }}">{{ object.title }}</a></h5>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
