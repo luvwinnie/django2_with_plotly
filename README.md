@@ -10,4 +10,4 @@ This example is based on tutorial which implemented in Django 1.11.8 which provi
 
 I modified a bit in order to work out with Django version 2.
 
-![Alt desc](https://github.com/luvwinnie/django2_with_plotly/plotly_quandle.png)
+![Alt desc](plotly_quandle.png)
