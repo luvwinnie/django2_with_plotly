@@ -24,7 +24,8 @@ def dispatcher(request):
         return response.get_data()
 
 def _create_app():
-    app = dash.Dash()
+    app = dash.Dash(url_base_pathname="/dash_tutorial/", csrf_protect=False)
+    app.config.suppress_callback_exceptions = True
     app.layout = html.Div(children=[
         html.H1(children='Hello Dash'),
 
@@ -45,6 +46,8 @@ def _create_app():
             }
         )
     ])
+    return app
+
 
 if __name__ == '__main__':
     app = _create_app()

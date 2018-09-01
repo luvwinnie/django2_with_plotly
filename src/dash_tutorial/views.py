@@ -12,10 +12,10 @@ from .as_dash import dispatcher
 
 ### dash ###
 
-def dash_test(request, **kwargs):
+def dash(request, **kwargs):
     return HttpResponse(dispatcher(request))
 
 
 @csrf_exempt
-def dash_test_ajax(request):
+def dash_ajax(request):
     return HttpResponse(dispatcher(request), content_type='application/json')

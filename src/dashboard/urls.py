@@ -30,6 +30,7 @@ urlpatterns = [
     path('companies/', company_article_list, name="companies"),
     path('api/chart/data/', ChartData.as_view(), name="api-chart-data"),
     path('dash/', include('finance.urls')),
+    path('dash_tutorial/', include('dash_tutorial.urls')),
     # re_path('^_dash-', dash_ajax),
     # re_path('^', dash),
 ]
