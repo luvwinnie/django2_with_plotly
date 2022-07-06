@@ -22,7 +22,7 @@ itsdangerous==0.24
 Jinja2==2.10
 jsonschema==2.6.0
 jupyter-core==4.4.0
-lxml==4.2.4
+lxml==4.9.1
 MarkupSafe==1.0
 mccabe==0.6.1
 nbformat==4.4.0
